@@ -20,6 +20,7 @@ namespace NGS_TelephoneBook
 		}
 
 		private void UpdateItemSource() => LBviewContacts.ItemsSource = new ContactController().Contacts;
+
 		private void ButtonBaseAdd_OnClick(object sender, RoutedEventArgs e)
 		{
 			var window = new CreateOrEditContact();
@@ -43,9 +44,8 @@ namespace NGS_TelephoneBook
 			UpdateItemSource();
 		}
 
-		private void TbSearch_OnTextChanged(object sender, TextChangedEventArgs e)
-		{
-			LBviewContacts.ItemsSource = new ContactController().Contacts.Where(x => x.Name.ToLower().StartsWith(tbSearch.Text.ToLower()));
-		}
+		private void TbSearch_OnTextChanged(object sender, TextChangedEventArgs e) =>
+		LBviewContacts.ItemsSource = new ContactController().Contacts.Where(x => x.Name.ToLower().StartsWith(tbSearch.Text.ToLower()));
+
 	}
 }

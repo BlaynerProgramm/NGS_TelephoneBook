@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NGS_TelephoneBook"
         mc:Ignorable="d"
-        Title="Телефонная книжка" Height="529" Width="834.206">
+        Title="Телефонная книжка" MaxHeight="529" MaxWidth="834">
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="48*"/>
@@ -13,25 +13,26 @@
 			<RowDefinition Height="101*"/>
 		</Grid.RowDefinitions>
 
-		<TextBox Name ="tbSearch" Grid.Row="0" TextChanged="TbSearch_OnTextChanged"></TextBox>
+		<TextBox Name ="tbSearch" Grid.Row="0" Background="AliceBlue" TextChanged="TbSearch_OnTextChanged"/>
 
-		<ListBox Grid.Row="1" Name="LBviewContacts" VerticalContentAlignment="Bottom" HorizontalAlignment="Center" Height="440" VerticalAlignment="Top" Width="800" MouseDoubleClick="LBviewContacts_OnMouseDoubleClick">
+		<ListBox Grid.Row="1" Name="LBviewContacts" VerticalContentAlignment="Bottom" HorizontalAlignment="Left" Height="440" VerticalAlignment="Top" Width="800" MouseDoubleClick="LBviewContacts_OnMouseDoubleClick">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<Grid>
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="380"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
 						</Grid.ColumnDefinitions>
 						<Grid.RowDefinitions>
 							<RowDefinition Height="Auto"/>
 							<RowDefinition Height="Auto"/>
 							<RowDefinition Height="Auto"/>
 						</Grid.RowDefinitions>
-						<Border Grid.Row="0" Grid.Column="0" BorderThickness="2">
-							<Image Source=""></Image>
+						<Border Grid.Row="0" Grid.Column="0" BorderThickness="2" HorizontalAlignment="Left">
+							<Image Source="Source\contact.png" Height="50" Width="50"></Image>
 						</Border>
-						<Label Grid.Row="1" Grid.Column="0" Content="{Binding Name}"/>
-						<Label Grid.Row="2" Grid.Column="0" Content="{Binding Phone}"/>
+						<Label Grid.Row="0" Grid.Column="1" Content="{Binding Name}"/>
+						<Label Grid.Row="1" Grid.Column="1" Content="{Binding Phone}"/>
 					</Grid>
 				</DataTemplate>
 			</ListBox.ItemTemplate>

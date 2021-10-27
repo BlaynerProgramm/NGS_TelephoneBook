@@ -6,6 +6,9 @@ namespace NGS_TelephoneBook.Controllers
 {
 	public class ContactController
 	{
+		/// <summary>
+		/// Все контакты
+		/// </summary>
 		public List<Contact> Contacts { get; set; }
 
 		public ContactController()
