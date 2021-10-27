@@ -1,0 +1,25 @@
+﻿using System;
+
+namespace NGS_TelephoneBook.Model
+{
+	public class Contact : IContact
+	{
+		public string Name { get; set; }
+		public string Phone { get; set; }
+
+		public Contact(string name, string phone)
+		{
+			if (!string.IsNullOrWhiteSpace(name) || !string.IsNullOrWhiteSpace(phone))
+			{
+				Name = name;
+				Phone = phone;
+			}
+			else
+			{
+				throw new ArgumentNullException();
+			}
+		}
+
+		public override string ToString() => $"{Name}\n{Phone}";
+	}
+}
