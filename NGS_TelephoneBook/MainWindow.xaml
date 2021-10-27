@@ -7,8 +7,15 @@
         mc:Ignorable="d"
         Title="Телефонная книжка" Height="529" Width="834.206">
 	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="48*"/>
+			<RowDefinition Height="349*"/>
+			<RowDefinition Height="101*"/>
+		</Grid.RowDefinitions>
 
-		<ListBox Name="LBviewContacts" VerticalContentAlignment="Bottom" HorizontalAlignment="Center" Height="440" VerticalAlignment="Top" Width="806" Margin="10,50,10,0">
+		<TextBox Name ="tbSearch" Grid.Row="0" TextChanged="TbSearch_OnTextChanged"></TextBox>
+
+		<ListBox Grid.Row="1" Name="LBviewContacts" VerticalContentAlignment="Bottom" HorizontalAlignment="Center" Height="440" VerticalAlignment="Top" Width="800" MouseDoubleClick="LBviewContacts_OnMouseDoubleClick">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<Grid>
@@ -29,5 +36,10 @@
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
+		<StackPanel Grid.Row="2" Orientation="Vertical">
+			<Button Content="+" Click="ButtonBaseAdd_OnClick"/>
+			<Button Content="Удалить выбранный" Click="ButtonBaseDelete_OnClick"/>
+		</StackPanel>
+		
 	</Grid>
 </Window>

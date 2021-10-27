@@ -2,15 +2,17 @@
 
 namespace NGS_TelephoneBook.Model
 {
-	public class Contact : IContact
+	public class Contact
 	{
+		public int Id { get; set; }
 		public string Name { get; set; }
 		public string Phone { get; set; }
 
-		public Contact(string name, string phone)
+		public Contact(string name, string phone, int id)
 		{
 			if (!string.IsNullOrWhiteSpace(name) || !string.IsNullOrWhiteSpace(phone))
 			{
+				Id = id;
 				Name = name;
 				Phone = phone;
 			}
@@ -20,6 +22,6 @@ namespace NGS_TelephoneBook.Model
 			}
 		}
 
-		public override string ToString() => $"{Name}\n{Phone}";
+		public override string ToString() => $"{Name} \n{Phone}";
 	}
 }

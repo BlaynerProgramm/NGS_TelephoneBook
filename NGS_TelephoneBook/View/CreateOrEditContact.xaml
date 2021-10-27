@@ -1,0 +1,32 @@
+﻿<Window x:Class="NGS_TelephoneBook.View.CreateOrEditContact"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NGS_TelephoneBook.View"
+        mc:Ignorable="d"
+        Title="Создание контакта" Height="413" Width="487">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="81*"/>
+			<ColumnDefinition Width="322*"/>
+			<ColumnDefinition Width="76*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40*"/>
+			<RowDefinition Height="121*"/>
+			<RowDefinition Height="30*"/>
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Column="1" Grid.Row="1">
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Имя: "/>
+				<TextBox Name="tbName" Width="200"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Телефон: "/>
+				<TextBox Name="tbPhone" Width="174"/>
+			</StackPanel>
+		</StackPanel>
+		<Button Name="bt" Grid.Row="2" Grid.Column="1" Content="+"/>
+	</Grid>
+</Window>
